@@ -8,4 +8,7 @@ import com.yqw.custom.spring.mvc.annotation.MyService;
 @MyService
 public class UserService {
 
+    public String get(String name) {
+        return  null;
+    }
 }
