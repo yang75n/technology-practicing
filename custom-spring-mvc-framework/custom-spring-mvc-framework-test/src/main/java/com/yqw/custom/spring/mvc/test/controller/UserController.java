@@ -1,10 +1,11 @@
 package com.yqw.custom.spring.mvc.test.controller;
 
-import com.yqw.custom.spring.mvc.annotation.MyAutowired;
-import com.yqw.custom.spring.mvc.annotation.MyController;
-import com.yqw.custom.spring.mvc.annotation.MyRequestMapping;
-import com.yqw.custom.spring.mvc.annotation.MyRequestParam;
+
 import com.yqw.custom.spring.mvc.test.service.UserService;
+import mvc.annotation.MyAutowired;
+import mvc.annotation.MyController;
+import mvc.annotation.MyRequestMapping;
+import mvc.annotation.MyRequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

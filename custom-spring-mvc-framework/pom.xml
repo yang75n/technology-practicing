@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>custom-spring-mvc-framework-test</module>
+        <module>custom-spring-mvc-framework-implement</module>
     </modules>
 
 

@@ -1,0 +1,6 @@
+mvc\annotation\MyController.class
+mvc\annotation\MyRequestMapping.class
+mvc\annotation\MyService.class
+mvc\annotation\MyRequestParam.class
+mvc\annotation\MyAutowired.class
+mvc\servlet\MyDispatcherServlet.class
