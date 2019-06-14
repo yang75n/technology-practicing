@@ -1,6 +1,7 @@
 package com.yqw.custom.spring.mvc.test.service;
 
-import com.yqw.custom.spring.mvc.annotation.MyService;
+
+import mvc.annotation.MyService;
 
 /**
  * Created by Qiwen on 2019/6/1.
@@ -8,4 +9,7 @@ import com.yqw.custom.spring.mvc.annotation.MyService;
 @MyService
 public class UserService {
 
+    public String get(String name) {
+        return "qiwen";
+    }
 }
