@@ -1,6 +1,6 @@
-package com.yqw.user.sso.client.interceptor;
+package com.yqw.order.sso.client.interceptor;
 
-import com.yqw.user.sso.client.util.HttpUtil;
+import com.yqw.order.sso.client.util.HttpUtil;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +15,7 @@ public class SessionInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         System.out.println("拦截了");
-        //在user.com中判断是否有session对象
+        //在order.com中判断是否有session对象
         HttpSession httpSession = request.getSession(false);
         if (httpSession != null && httpSession.getAttribute("isLogin").equals("logined")) {
             return true;
@@ -36,7 +36,7 @@ public class SessionInterceptor extends HandlerInterceptorAdapter {
         }
 
         //表示当你需要访问user.com中的某个资源时，既没有session信息，也没有其他系统已经登录过得token信息
-        response.sendRedirect("http://www.sso.com：8080/preLogin?url=www.user.com:8081/user/wel");
+        response.sendRedirect("http://www.sso.com：8080/preLogin?url=www.order.com:8082/order/wel");
 
         return false;
     }
