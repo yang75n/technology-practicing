@@ -38,6 +38,9 @@ public class MyDefaultPool implements IMyPool {
         jdbcURL = DBConfigXML.jdbcURL;
         jdbcPassword = DBConfigXML.jdbcPassword;
         jdbcUsername = DBConfigXML.jdbcUsername;
+        initCount = DBConfigXML.initCount;
+        step = DBConfigXML.step;
+        maxCount = DBConfigXML.maxCount;
     }
 
 
