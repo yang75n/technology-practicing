@@ -1,0 +1,2 @@
+test-classpath
+该文件编译后，会被放置到classpath路径下.(和class的com包文件夹平级)
