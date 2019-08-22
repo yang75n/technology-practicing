@@ -1,10 +1,12 @@
 package com.yqw.classpath;
 
-import sun.misc.ClassLoaderUtil;
+import java.io.IOException;
+import java.net.URL;
+import java.util.Enumeration;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         //classpath路径
         String classpath = Main.class.getClassLoader().getResource("").getPath();
@@ -30,5 +32,9 @@ public class Main {
         System.out.println("userdir=" + userdir);
 
 
+        Enumeration<URL> paths = ClassLoader.getSystemResources("test.txt");
+        while (paths.hasMoreElements()) {
+            System.out.println("emumpaths=" + paths.nextElement());
+        }
     }
 }
