@@ -1,5 +1,9 @@
 package com.yqw.classpath;
 
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.Enumeration;
@@ -36,5 +40,9 @@ public class Main {
         while (paths.hasMoreElements()) {
             System.out.println("emumpaths=" + paths.nextElement());
         }
+
+        BeanFactory beanFactory = new AnnotationConfigApplicationContext(Main.class);
+        //System.out.println(beanFactory.getBean(""));
+
     }
 }
