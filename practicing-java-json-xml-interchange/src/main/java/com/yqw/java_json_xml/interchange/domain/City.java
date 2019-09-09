@@ -6,17 +6,29 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 
-@XmlRootElement(name = "d")
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement()
+//@XmlAccessorType(XmlAccessType.FIELD)
 public class City {
-    @XmlAttribute(name = "d1")
+    //@XmlAttribute(name = "d1")
     private String cityId;
-    @XmlAttribute(name = "d2")
+   // @XmlAttribute(name = "d2")
     private String cityName;
-    @XmlAttribute(name = "d3")
+   // @XmlAttribute(name = "d3")
     private String cityCode;
-    @XmlAttribute(name = "d4")
+    //@XmlAttribute(name = "d4")
     private String province;
+
+
+    public  City(){
+
+    }
+
+    public City(String cityId, String cityName, String cityCode, String province) {
+        this.cityId = cityId;
+        this.cityName = cityName;
+        this.cityCode = cityCode;
+        this.province = province;
+    }
 
     public String getCityId() {
         return cityId;

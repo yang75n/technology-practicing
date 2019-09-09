@@ -1,14 +1,39 @@
 package com.yqw.java_json_xml.interchange.test;
 
+import com.yqw.java_json_xml.interchange.domain.City;
 import com.yqw.java_json_xml.interchange.domain.CityList;
 import com.yqw.java_json_xml.interchange.util.XmlUtils;
 import org.junit.Test;
 
 import javax.xml.bind.JAXBException;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class XmlUtilsTest {
+
+
+    @Test
+    public void object2Xml() throws JAXBException, FileNotFoundException {
+        City city = new City("101", "北京", "beijing", "北京");
+        City city2 = new City("102", "上海", "shanghai", "上海");
+        City city3 = new City("103", "广州", "guangzhou", "关东");
+
+        List list = new ArrayList();
+        list.add(city);
+        list.add(city2);
+        list.add(city3);
+
+        CityList cityList = new CityList();
+        cityList.setCityList(list);
+
+
+        System.out.println(XmlUtils.obejct2XmlString(cityList));
+
+        XmlUtils.object2Xml(cityList,cityList.getClass().getClassLoader().getResource("").getPath()+"/tmp.xml");
+
+    }
 
     @Test
     public void xmlFileToObject() throws JAXBException, FileNotFoundException {
@@ -16,7 +41,8 @@ public class XmlUtilsTest {
         System.out.println(cityList);
 
         //将Java对象转为xml文件
-        XmlUtils.object2Xml(cityList, "d://tmp.xml");
+        String xmlStr = XmlUtils.obejct2XmlString(cityList);
+        System.out.println(xmlStr);
     }
 
     @Test

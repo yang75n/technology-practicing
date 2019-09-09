@@ -46,7 +46,30 @@ public abstract class XmlUtils {
     public static <T> void object2Xml(T t, String xmlFilePath) throws JAXBException, FileNotFoundException {
         JAXBContext context = JAXBContext.newInstance(t.getClass());
         Marshaller marshaller = context.createMarshaller();
+        // 格式化xml输出的格式
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,
+                Boolean.TRUE);
         FileOutputStream outputStream = new FileOutputStream(xmlFilePath);
         marshaller.marshal(t, outputStream);
+    }
+
+
+    /**
+     * 将Java对象转换为xml字符串.
+     */
+    public static <T> String obejct2XmlString(T t) {
+        JAXBContext context = null;
+        StringWriter stringWriter = new StringWriter();
+        try {
+            context = JAXBContext.newInstance(t.getClass());
+            Marshaller marshaller = context.createMarshaller();
+            // 格式化xml输出的格式
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,
+                    Boolean.TRUE);
+            marshaller.marshal(t, stringWriter);
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        return stringWriter.toString();
     }
 }

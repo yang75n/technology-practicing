@@ -7,10 +7,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 
-@XmlRootElement(name = "c")
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "cityLists")
+//@XmlAccessorType(XmlAccessType.FIELD)
 public class CityList {
-    @XmlElement(name = "d")
+  //  @XmlElement(name = "d")
     private List<City> cityList;
 
     public List<City> getCityList() {
