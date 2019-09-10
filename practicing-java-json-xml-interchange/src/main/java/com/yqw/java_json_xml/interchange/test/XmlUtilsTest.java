@@ -37,7 +37,7 @@ public class XmlUtilsTest {
 
     @Test
     public void xmlFileToObject() throws JAXBException, FileNotFoundException {
-        CityList cityList = XmlUtils.xmlFileToObject("cityList.xml", CityList.class);
+        CityList cityList = XmlUtils.xmlFileToObject("tmp.xml", CityList.class);
         System.out.println(cityList);
 
         //将Java对象转为xml文件

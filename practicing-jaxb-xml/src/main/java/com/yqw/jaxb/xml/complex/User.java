@@ -1,7 +1,8 @@
-package com.yqw.jaxb.xml;
+package com.yqw.jaxb.xml.complex;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -9,20 +10,20 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * @author iQiwen
+ * @author Steven
  */
-//@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAccessorType(XmlAccessType.FIELD)
 // XML文件中的根标识  
-//@XmlRootElement(name = "User")
-@XmlRootElement
+@XmlRootElement(name = "User")
 // 控制JAXB 绑定类中属性和字段的排序  
-//@XmlType(propOrder = {
-//        "userId",
-//        "userName",
-//        "password",
-//        "birthday",
-//        "money",
-//})
+@XmlType(propOrder = {
+        "userId",
+        "userName",
+        "password",
+        "birthday",
+        "money",
+        "computers"
+})
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -36,6 +37,8 @@ public class User implements Serializable {
     private Date birthday;
     // 用户钱包  
     private double money;
+    // 拥有的电脑  
+    private List<Computer> computers;
 
     public User() {
         super();
@@ -91,11 +94,20 @@ public class User implements Serializable {
         this.money = money;
     }
 
+
+    public void setComputers(List<Computer> computers) {
+        this.computers = computers;
+    }
+
+    public List<Computer> getComputers() {
+        return computers;
+    }
+
     @Override
     public String toString() {
-        return "User [birthday=" + birthday + ", money=" + money
-                + ", password=" + password + ", userId=" + userId
-                + ", userName=" + userName + "]";
+        return "User [birthday=" + birthday + ", computers=" + computers
+                + ", money=" + money + ", password=" + password + ", userId="
+                + userId + ", userName=" + userName + "]";
     }
 
 }

@@ -22,7 +22,7 @@ public class XMLUtil {
      * @param obj
      * @return
      */
-    public static String convertToXml(Object obj) {
+    public static String convertToXmlString(Object obj) {
         // 创建输出流  
         StringWriter sw = new StringWriter();
         try {
@@ -48,7 +48,7 @@ public class XMLUtil {
      * @param path
      * @return
      */
-    public static void convertToXml(Object obj, String path) {
+    public static void convertToXmlFile(Object obj, String path) {
         try {
             // 利用jdk中自带的转换类实现  
             JAXBContext context = JAXBContext.newInstance(obj.getClass());

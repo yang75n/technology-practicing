@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cityLists>
+    <cityList>
+        <cityCode>beijing</cityCode>
+        <cityId>101</cityId>
+        <cityName>北京</cityName>
+        <province>北京</province>
+    </cityList>
+    <cityList>
+        <cityCode>shanghai</cityCode>
+        <cityId>102</cityId>
+        <cityName>上海</cityName>
+        <province>上海</province>
+    </cityList>
+    <cityList>
+        <cityCode>guangzhou</cityCode>
+        <cityId>103</cityId>
+        <cityName>广州</cityName>
+        <province>关东</province>
+    </cityList>
+</cityLists>
