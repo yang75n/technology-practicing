@@ -16,6 +16,19 @@ public class Student {
     private int age;
     private Classroom classroom;
 
+    public Student(int id, String name, int age, Classroom classroom) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.classroom = classroom;
+    }
+
+    //无参够着函数一定需要，否则JXBContext无法正常解析。
+    public Student() {
+        super();
+    }
+
     public int getId() {
         return id;
     }
@@ -48,18 +61,6 @@ public class Student {
         this.classroom = classroom;
     }
 
-    public Student(int id, String name, int age, Classroom classroom) {
-        super();
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.classroom = classroom;
-    }
-
-    //无参够着函数一定需要，否则JXBContext无法正常解析。  
-    public Student() {
-        super();
-    }
 
     @Override
     public String toString() {

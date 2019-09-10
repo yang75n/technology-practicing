@@ -5,6 +5,17 @@ public class Classroom {
     private String name;
     private int grade;
 
+    public Classroom(int id, String name, int grade) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.grade = grade;
+    }
+
+    public Classroom() {
+        super();
+    }
+
 
     public int getId() {
         return id;
@@ -28,17 +39,6 @@ public class Classroom {
 
     public void setGrade(int grade) {
         this.grade = grade;
-    }
-
-    public Classroom(int id, String name, int grade) {
-        super();
-        this.id = id;
-        this.name = name;
-        this.grade = grade;
-    }
-
-    public Classroom() {
-        super();
     }
 
 

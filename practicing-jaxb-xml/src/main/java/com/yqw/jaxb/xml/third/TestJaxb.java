@@ -26,7 +26,6 @@ public class TestJaxb {
         } catch (JAXBException e) {
             e.printStackTrace();
         }
-
     }
 
     @Test
