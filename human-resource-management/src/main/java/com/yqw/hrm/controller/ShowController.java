@@ -16,7 +16,7 @@ import java.util.List;
 @Controller
 public class ShowController {
 
-    Logger logger = LoggerFactory.getLogger(ShowController.class);
+    private static final Logger logger = LoggerFactory.getLogger(ShowController.class);
 
     @Autowired
     private CondidateService condidateService;
@@ -38,5 +38,14 @@ public class ShowController {
         logger.info("/show show map=" + map);
         map.addAttribute("cds", condidateService.listAll());
         return "show";
+    }
+
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    public String save(ModelMap map) {
+        Condidate condidate = new Condidate();
+        condidate.setName("随机");
+        condidate.setAge(90);
+        condidateService.save(condidate);
+        return show(map);
     }
 }

@@ -1,9 +1,16 @@
 package com.yqw.hrm.domain;
 
+import javax.persistence.*;
+
 /**
  * 候选人
  */
+@Entity
 public class Condidate {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id ;
     private String name;
     private int age;
     private String gender;//性别
