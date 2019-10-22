@@ -7,3 +7,4 @@ gen/
 build/
 target/
 *.iml
+*.log
