@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Hello</title>
+</head>
+<body>
+<div>
+    <h1>hello</h1>
+    <table border="1">
+        <tr>
+            <td>索引</td>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>性别</td>
+            <td>手机号</td>
+            <td>毕业院校</td>
+        </tr>
+        <tr th:each="cd,iterStat : ${cds}">
+            <td th:text="${iterStat.index}">index</td>
+            <td th:text="${cd.name}">neo</td>
+            <td th:text="${cd.age}">6</td>
+            <td th:text="${cd.gender}">6</td>
+            <td th:text="${cd.telephone}">6</td>
+            <td th:text="${cd.university}">6</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
